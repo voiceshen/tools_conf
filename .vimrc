@@ -39,6 +39,7 @@ set showcmd
 "file_name Line:row/nb_of_rows, col
 set statusline=%<%f\  "filename
 set statusline+=%w%h%m%r\  "options
+set statusline+=%{fugitive#statusline()}\  "Git hotness
 set statusline+=line:%l\/%L,\ col:%c
 
 syntax on
