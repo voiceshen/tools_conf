@@ -1,20 +1,33 @@
-set nocompatible
+"set nocompatible
 "backspace configuration
-set bs=2
+"set bs=2
+set enc=utf-8
+set tenc=utf-8
+set fenc=utf-8
+set fencs=utf-8,usc-bom
+
+set tabstop=8
+"""""""""
+" edit style
+"""""""""
+"set autoindent
+set cindent
+"back to last edit position
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 """""""""
 "display"
 """""""""
 "number of columns of the screen
-set columns=80
+"set columns=80
 "use colors that look good on a dark background
-set background=dark
+"set background=dark
 "minimal number of screen lines to keep abave and below the cursor
-set so=5
+"set so=5
 "briefly jump to the matching bracket
-set showmatch
+"set showmatch
 "time to show the match
-set matchtime=2
+"set matchtime=2
 
 """"""""""""""
 "search stuff"
@@ -24,23 +37,23 @@ set incsearch
 "matching text is highlighted
 set hlsearch
 "ignorecase in search patterns
-set ignorecase
+"set ignorecase
 
 """"""""""""""
 "status stuff"
 """"""""""""""
 "always have a status line
-set laststatus=2
+"set laststatus=2
 "show line and column number of the cursor position
-set ruler
+"set ruler
 "show command in the last line of the screen
-set showcmd
+"set showcmd
 "content of the status line
 "file_name Line:row/nb_of_rows, col
-set statusline=%<%f\  "filename
-set statusline+=%w%h%m%r\  "options
-set statusline+=%{fugitive#statusline()}\  "Git hotness
-set statusline+=line:%l\/%L,\ col:%c
+"set statusline=%<%f\  "filename
+"set statusline+=%w%h%m%r\  "options
+"set statusline+=%{fugitive#statusline()}\  "Git hotness
+"set statusline+=line:%l\/%L,\ col:%c
 
 syntax on
 
@@ -58,3 +71,13 @@ syntax on
 """""""""""""""""""
 "underline cursor line
 "set cursorline
+
+
+
+""""""""""""""""""
+" Plugin
+""""""""""""""""""
+"let g:winManagerWindowLayout='FileExplorer|TagList'
+"nmap wm :WMToggle<cr>
+
+nmap <silent> <c-n> :NERDTreeToggle<CR>
