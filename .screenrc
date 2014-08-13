@@ -1,0 +1,31 @@
+# Define a large scrollback buffer for command which executed
+defscrollback 8192
+
+deflog on
+
+# turn off the start up message
+startup_message off
+
+# Refresh the display when exiting programs
+altscreen on
+
+# vbell
+vbell off
+
+autodetach on
+# support mouse to rollback the screen
+#termcapinfo xterm|xterms|xs|rxvt ti@:te@
+
+#termcapinfo rxvt 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+#caption always "%{= kw}%-w%{= kG}%{+b}[%n %t]%{-b}%{= kw}%+w %=%d %M %0c %{g}%H%{-}"
+
+hardstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-w%{.rY}%n %t%{-}%+w %=%{..G} %{..Y}"
+#%Y/%m/%d %c:%s "
+#bind ' ' title
+
+# title
+shelltitle '$ |bash'
+
+unbind ^X
