@@ -1,7 +1,7 @@
 # Define a large scrollback buffer for command which executed
 defscrollback 8192
 
-deflog on
+# deflog on
 
 # turn off the start up message
 startup_message off
