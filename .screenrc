@@ -29,3 +29,21 @@ hardstatus string "%{.bW}%-w%{.rY}%n %t%{-}%+w %=%{..G} %{..Y}"
 shelltitle '$ |bash'
 
 unbind ^X
+
+# Put the following settings into $HOME/.bashrc
+
+##screen and xterm's dynamic title
+##screenxtermescape sequences
+#case $TERM in
+#    screen*)
+#        PATHTITLE='\[\ek\w\e\\\]'
+#        PROGRAMTITLE='\[\ek\e\\\]'
+#        PS1="${PROGRAMTITLE}${PATHTITLE}${PS1}"
+#        ;;
+#    xterm*)
+#        TITLEBAR='\[\e]0;\u@\h:\w\a\]'
+#        PS1="${TITLEBAR}${PS1}"
+#        ;;
+#    *)
+#        ;;
+#esac
